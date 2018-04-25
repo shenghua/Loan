@@ -1,0 +1,19 @@
+//
+//  Loan-prefix.pch
+//  Loan
+//
+//  Created by 王胜华 on 11/10/2017.
+//  Copyright © 2017 imobpay. All rights reserved.
+//
+
+#ifndef Loan_prefix_pch
+#define Loan_prefix_pch
+
+#import "IMPMacro.h"
+#import "IMPEnum.h"
+#import "ReactiveObjC.h"
+
+// Include any system framework and library headers here that should be included in all compilation units.
+// You will also need to set the Prefix Header build setting of one or more of your targets to reference this file.
+
+#endif /* Loan_prefix_pch */

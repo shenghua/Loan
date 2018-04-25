@@ -1,0 +1,6 @@
+framework module IMPTool {
+  umbrella header "IMPTool-umbrella.h"
+
+  export *
+  module * { export * }
+}
