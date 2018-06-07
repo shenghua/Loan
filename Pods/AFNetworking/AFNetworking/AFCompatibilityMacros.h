@@ -1,7 +1,5 @@
-//
-// IQToolbar.h
-// https://github.com/hackiftekhar/IQKeyboardManager
-// Copyright (c) 2013-16 Iftekhar Qurashi.
+// AFCompatibilityMacros.h
+// Copyright (c) 2011–2016 Alamofire Software Foundation ( http://alamofire.org/ )
 //
 // Permission is hereby granted, free of charge, to any person obtaining a copy
 // of this software and associated documentation files (the "Software"), to deal
@@ -21,40 +19,19 @@
 // OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
 // THE SOFTWARE.
 
-#import "IQTitleBarButtonItem.h"
+#ifndef AFCompatibilityMacros_h
+#define AFCompatibilityMacros_h
 
-#import <UIKit/UIToolbar.h>
-#import <UIKit/UIDevice.h>
+#ifdef API_UNAVAILABLE
+    #define AF_API_UNAVAILABLE(x) API_UNAVAILABLE(x)
+#else
+    #define AF_API_UNAVAILABLE(x)
+#endif // API_UNAVAILABLE
 
-/**
- IQToolbar for IQKeyboardManager.
- */
-@interface IQToolbar : UIToolbar <UIInputViewAudioFeedback>
+#if __has_warning("-Wunguarded-availability-new")
+    #define AF_CAN_USE_AT_AVAILABLE 1
+#else
+    #define AF_CAN_USE_AT_AVAILABLE 0
+#endif
 
-/**
- Previous bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong) IQBarButtonItem *previousBarButton;
-
-/**
- Next bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong) IQBarButtonItem *nextBarButton;
-
-/**
- Title bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong, readonly) IQTitleBarButtonItem *titleBarButton;
-
-/**
- Done bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong) IQBarButtonItem *doneBarButton;
-
-/**
- Fixed space bar button of toolbar.
- */
-@property(nonnull, nonatomic, strong) IQBarButtonItem *fixedSpaceBarButton;
-
-@end
-
+#endif /* AFCompatibilityMacros_h */
